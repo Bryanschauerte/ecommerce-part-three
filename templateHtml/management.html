@@ -1,0 +1,28 @@
+<md-button ng-if = "showAddFormButton" class="md-raised" md-ripple-size = "full" ng-click = "toggleAddForm()">Add A Product</md-button>
+
+
+<div ng-if = "showAddForm">
+  <md-input-container>
+    <label>Item's name?</label>
+    <input type="text" ng-model="product.productName" required md-minlength="2">
+  </md-input-container>
+
+  <md-input-container>
+    <label>Whats the new item's price?</label>
+    <input type="number" ng-model="product.price" required md-minlength="2">
+  </md-input-container>
+
+  <md-input-container>
+    <label>Whats the new item's description?</label>
+    <input type="text" ng-model="product.description" required md-minlength="10">
+  </md-input-container>
+<md-button class="md-raised" md-ripple-size = "full" ng-click = "addProduct(product.productName, product.price, product.description)">Submit</md-button>
+<md-divider md-inset></md-divider>
+</div>
+
+<div layout="column" layout-align="left left" style="height: 100px;">
+   <md-select placeholder="Select Product To Delete" ng-model="targetToDelete" md-on-open="getProducts()" style="min-width: 200px;">
+     <md-option ng-value="product._id" ng-repeat="product in products">{{product.productName}}</md-option>
+   </md-select>
+   <md-button ng-if = "targetToDelete" class="md-raised md-warn" md-ripple-size = "full" ng-click = "removeProduct(targetToDelete)">DELETE</md-button>
+ </div>

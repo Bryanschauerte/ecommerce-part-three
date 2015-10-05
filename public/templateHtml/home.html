@@ -1,0 +1,13 @@
+<h1>Welcome!</h1>
+<h3>Come buy some junk!</h3>
+
+              <md-input-container ng-if ="!loggedIn">
+                <input  ng-model="user" type = 'text'><label>Username</label></md-input>
+              </md-input-container>
+                <md-input-container ng-if ="!loggedIn">
+                <input  ng-model="password" type = 'text'><label>password</label></md-input>
+              </md-input-container>
+
+              <md-button  ng-if ="!loggedIn" class="md-raised" md-ripple-size = "full" ng-click = "addUser(user, password)">
+                Add User
+              </md-button>

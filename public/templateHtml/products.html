@@ -1,0 +1,18 @@
+
+    <md-list>
+      <md-subheader class="md-no-sticky">Products</md-subheader>
+      <md-list-item layout = 'column'  class="md-4-line" ng-repeat="product in products">
+        <div flex class="md-list-item-text">
+          <h3>{{ product.title }}</h3>
+          <h4>{{ product.description }}</h4>
+          <p>${{ product.price }}</p>
+
+          <md-button class="md-raised" md-ripple-size = "full" ng-click = "addItemToCart(product.title, product._id, product.price)">
+            Add this item to cart
+          </md-button>
+        </div>
+
+      </md-list-item>
+      <md-divider ></md-divider>
+
+    </md-list>
