@@ -6,45 +6,37 @@
 <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
 </head>
 <body ng-controller="mainCtrl">
+  <md-toolbar layout="column">
+    <div class="md-toolbar-tools">
+      <span>E-Commerce</span>
+      <!-- fill up the space between left and right area -->
+      <span flex></span>
+      <md-button class="md-raised" md-ripple-size = "full" ng-href="/#/home">
+        Home
+      </md-button>
+      <md-button class="md-raised" md-ripple-size = "full" ng-href="/#/products" ng-click = "getProducts()">
+        Products
+      </md-button>
+      <md-button class="md-raised" md-ripple-size = "full" ng-href="/#/cart" ng-click = "enterCart()" >
+        My Cart
+      </md-button>
+      <md-button class="md-raised" md-ripple-size = "full" ng-href="/#/management">
+        Management
+      </md-button>
+    </div>
+  </md-toolbar>
 
-          <md-toolbar layout="column">
-            <div class="md-toolbar-tools">
-              <span>E-Commerce</span>
-              <!-- fill up the space between left and right area -->
-              <span flex></span>
-              <md-button class="md-raised" md-ripple-size = "full" ng-href="/#/home">
-                Home
-              </md-button>
-              <md-button class="md-raised" md-ripple-size = "full" ng-href="/#/products" ng-click = "getProducts()">
-                Products
-              </md-button>
-              <md-button class="md-raised" md-ripple-size = "full" ng-href="/#/cart" ng-click = "adjustUserProps()">
-                My Cart
-              </md-button>
-              <md-button class="md-raised" md-ripple-size = "full" ng-href="/#/management">
-                Management
-              </md-button>
-
-            </div>
-          </md-toolbar>
-
-      <ng-view></ng-view>
-
-
+    <ng-view></ng-view>
 
       <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
       <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.min.js"></script>
       <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-aria.min.js"></script>
-
-      <!-- Angular Material Javascript now available via Google CDN; version 0.9.4 used here -->
       <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.js"></script>
-
       <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.js"></script>
       <script src="js/app.js"></script>
       <script src="js/mainCtrl.js"></script>
       <script src='js/productService.js'></script>
       <script src='js/userService.js'></script>
-
 
 </body>
 </html>

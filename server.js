@@ -35,15 +35,15 @@ app.delete('/products/:id', ProductsController.remove);
 
 app.post('/products', ProductsController.create);
 
-//make a user
 app.post('/users', UserController.create);
-//get a user
+
 app.get('/users', UserController.getRecent);
-// push to user's cart
+
 app.post('/users/:id', UserController.addItemToCart);
+
 app.put('/users/:id', UserController.update);
 
-app.delete('/users/:id', UserController.remove);
+app.put('/users/remove/:id', UserController.remove);
 
 
 

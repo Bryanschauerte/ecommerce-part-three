@@ -15,10 +15,8 @@ module.exports = {
         }else{
           console.log(success);
         }
-        })
-        //need a save cd that gives error or result
-      }
-    })
+      });
+      }})
   },
 
   create: function(req, res){
@@ -30,7 +28,6 @@ module.exports = {
       }
     });
   },
-
 
   getRecent: function(req, res){
     User.find( {},function(error, result){
@@ -55,11 +52,6 @@ update: function(req, res){
 
 },
 
-  // remove: function(req, res){
-  //   User.findOneAndUpdate()
-  //
-  // }
-
   remove: function(req, res){
     User.findById(req.params.id, function(err, user) {
       console.log(req.body.removeItem);
@@ -68,6 +60,6 @@ update: function(req, res){
         res.send(data);
       });
     });
-}
+  }
 
 }
